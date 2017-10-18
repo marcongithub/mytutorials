@@ -1,0 +1,25 @@
+<wicket:head>
+<style type="text/css">
+.placeholder{
+	margin-left: 5em;
+}
+.placeholder:before{
+	content: "["
+}
+.placeholder:after{
+	content: "]"
+}
+</style>
+</wicket:head>
+<wicket:extend>
+	<h1>Car Rental</h1>
+	<form wicket:id="myForm">
+		<div class="placeholder" wicketid="rentalPeriod">Rental period</div>
+		<div wicket:id="carSelectionPanel"></div>
+
+		<div class="container">
+			<input type="submit" wicket:id="mySubmitButton" value="submit">
+		</div>
+
+	</form>
+</wicket:extend>

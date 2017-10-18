@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Projectstar</title>
+<link href="/wicketBasics/css/layout_3col_standard.css" rel="stylesheet" type="text/css"/>
+<link href="/wicketBasics/css/redmond/jquery-ui-1.8.9.custom.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+
+
+
+.page_margins {
+	max-width:95%;
+
+}
+.ui-widget{
+	margin-bottom:15px;
+}
+
+.ui-widget-content{
+	overflow:scroll;
+	height:200px;
+}
+
+#col3_content .ui-widget-content {
+	height:100%;
+}
+
+.ui-widget-header div{
+	float:right; 
+	border:solid;
+}
+ .ui-widget-header{
+	padding:10px;
+}
+
+</style>
+<script type="text/javascript" src="/wicketBasics/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/wicketBasics/js/jquery-ui-1.8.4.custom.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$(".min-max-icon").toggle(
+			function maximize(){
+				$(".page_margins").css('position','relative');
+				contentColumn=$(this).parents(".contentColumn:first");
+				contentColumn.css('position','static');
+				//maximize the whole widget container
+				uiWidget=$(this).parents(".ui-widget:first");
+				uiWidget.css('position','absolute');
+				uiWidget.css('z-index','1000');
+				uiWidget.css('top','0px');
+				uiWidget.css('left','0px');
+				uiWidget.animate({width:"100%"},200);
+				//maximize the widget content container
+				uiWidgetContent=uiWidget.children(".ui-widget-content:first")
+				var winHeight=$(window).height();
+				//save the height for restoring the window
+				var contentHeight=uiWidgetContent.height();
+				uiWidgetContent.data("contentHeight",contentHeight);
+				uiWidgetContent.animate({height:winHeight},200);
+				//replace the max with the min icon
+				$(this).removeClass("ui-icon-plusthick");
+				$(this).addClass("ui-icon-minusthick");
+			},
+			
+			function minimize(){
+				$(".page_margins").css('position','static');
+				contentColumn=$(this).parents(".contentColumn:first");
+				contentColumn.css('position','relative');
+				//restore the panel
+				uiWidget=$(this).parents(".ui-widget:first");
+				uiWidget.css('position','static');
+				uiWidget.animate({width:"100%"},200);
+				uiWidgetContent=uiWidget.children(".ui-widget-content:first")
+				var contentHeight=uiWidgetContent.data("contentHeight");
+				if(contentHeight){
+					uiWidgetContent.animate({height:contentHeight},200);
+				}
+				//replace the min with the max icon
+				$(this).removeClass("ui-icon-minusthick");
+				$(this).addClass("ui-icon-plusthick");
+			}
+	
+	);	
+	
+	
+	$(".ui-icon").hover(
+				function(){ 
+					$(this).addClass("ui-state-hover"); 
+				},
+				function(){ 
+					$(this).removeClass("ui-state-hover"); 
+				}
+			);
+		}
+	)
+</script>
+
+<!--[if lte IE 7]>
+<link href="css/patches/patch_3col_standard.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+</head>
+<body>
+<div id="outer">
+<div class="page_margins">
+  <div class="page">
+    <div id="header" class="ui-corner-tr ui-corner-tl">
+    <span>YAML &#8226; (X)HTML/CSS Framework</span>
+    <!-- 
+      <div id="topnav" role="contentinfo">
+        <span><a href="#">Login</a> | <a href="#">Contact</a> | <a href="#">Imprint</a></span>
+      </div>
+      <h1>Example | Beispiel <em>&laquo;3col_standard&raquo;</em></h1>
+      <span>YAML &#8226; (X)HTML/CSS Framework</span>
+       -->
+    </div>
+    <!-- begin: main navigation #nav -->
+    <div id="nav" role="navigation">
+      <div class="hlist">
+        <ul>
+          <li><a href="../index.html">Table Of Contents</a></li>
+          <li><a href="styling_content.html">Next Example</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- end: main navigation -->
+    <!-- begin: main content area #main -->
+    <div id="main">
+      <!-- begin: #col1 - first float column -->
+       
+      <div id="col1" role="complementary">
+        <div id="col1_content" class="contentColumn clearfix">
+        
+        <div id="panel_y" class="ui-widget" >
+			<div class="ui-widget-header ui-corner-tl ui-corner-tr">
+				Titlebar panel x
+				<div>
+					<a href="#" class="ui-corner-all">
+					<span class="min-max-icon ui-icon ui-icon-plusthick"></span></a>
+				</div>
+			</div>
+			<div class="ui-widget-content" >
+				<div>
+					1 asdfasdfas <br>
+			2 asdfasf rrrrrrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrrrrrr<br>
+			3 asdfasdfas ggggggggggggggggggggg ggggggggggggggg ggggggggggggggggg gggggggggggggggggggg ggggggggggggggggggg gggggggggggggg<br>
+			4 asdfasf <br>
+			5 asdfasdfas <br>
+			6asdfasf <br>
+			7 asdfasdfas <br>
+			8 asdfasf <br>
+			9 asdfasdfas <br>
+			10 asdfasf <br>
+			11 asdfasdfas <br>
+			12 asdfasf <br>
+			13 asdfasdfas bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb <br>
+			14 asdfasf <br>
+			15 asdfasdfas <br>
+			16 asdfasf <br>
+			17 asdfasdfas <br>
+			18 asdfasf <br>
+			19 asdfasdfas <br>
+			20 asdfasf <br>
+			21 asdfasdfas <br>
+			22 asdfasf <br>
+			23 asdfasdfas <br>
+			24 asdfasf <br>	
+				</div>
+			</div>
+		</div>
+        
+        <div id="panel_y" class="ui-widget" >
+			<div class="ui-widget-header ui-corner-tl ui-corner-tr">
+				Titlebar panel y
+				<div>
+					<a href="#" class="ui-corner-all">
+					<span class="min-max-icon ui-icon ui-icon-plusthick"></span></a>
+				</div>
+			</div>
+			<div  class="ui-widget-content">
+				<div>
+					1 asdfasdfas <br>
+			2 asdfasf rrrrrrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrrrrrr<br>
+			3 asdfasdfas ggggggggggggggggggggg ggggggggggggggg ggggggggggggggggg gggggggggggggggggggg ggggggggggggggggggg gggggggggggggg<br>
+			4 asdfasf <br>
+			5 asdfasdfas <br>
+			6asdfasf <br>
+			7 asdfasdfas <br>
+			8 asdfasf <br>
+			9 asdfasdfas <br>
+			10 asdfasf <br>
+			11 asdfasdfas <br>
+			12 asdfasf <br>
+			13 asdfasdfas bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb <br>
+			14 asdfasf <br>
+			15 asdfasdfas <br>
+			16 asdfasf <br>
+			17 asdfasdfas <br>
+			18 asdfasf <br>
+			19 asdfasdfas <br>
+			20 asdfasf <br>
+			21 asdfasdfas <br>
+			22 asdfasf <br>
+			23 asdfasdfas <br>
+			24 asdfasf <br>	
+				</div>
+			</div>
+		</div>
+         
+          
+        </div>
+      </div>
+       
+      <!-- end: #col1 -->
+      <!-- begin: #col2 second float column -->
+      <div id="col2" role="complementary">
+        <div id="col2_content" class="contentColumn clearfix">
+          <h2>Column  #col2</h2>
+          <p>Integer condimentum, justo a venenatis vulputate, enim pede porttitor eros, non   pretium lorem orci id tortor. Nulla a ligula. Mauris nulla arcu, luctus vel,   consequat non, luctus eu, nisi. Mauris volutpat, nunc eget pretium blandit,   ligula quam commodo nisl, ac fermentum nibh pede et nulla. In condimentum   bibendum nisi. Vestibulum risus. </p>
+          <p>Nullam placerat varius nibh. Quisque tellus   sapien, placerat sed, aliquam sit amet, scelerisque sit amet, nisi. Pellentesque   eget leo vitae felis laoreet dictum. Duis pellentesque porttitor sapien. Fusce   leo. Nulla leo. Donec mattis, justo nec gravida euismod, massa mi posuere   mauris.</p>
+        </div>
+      </div>
+      <!-- end: #col2 -->
+      <!-- begin: #col3 static column -->
+      <div id="col3" role="main">
+        <div id="col3_content" class="contentColumn clearfix">
+        
+        
+         <div id="panel_z" class="ui-widget" >
+			<div class="ui-widget-header ui-corner-tl ui-corner-tr">
+				Titlebar panel z
+				<div>
+					<a href="#" class="ui-corner-all">
+					<span class="min-max-icon ui-icon ui-icon-plusthick"></span></a>
+				</div>
+			</div>
+			<div  class="ui-widget-content">
+				<div>
+					<wicket:child/>	
+				</div>
+			</div>
+		</div>
+        
+        
+        
+        
+        </div>
+        <div id="ie_clearing">&nbsp;</div>
+        <!-- End: IE Column Clearing -->
+      </div>
+      <!-- end: #col3 -->
+    </div>
+    <!-- end: #main -->
+    <!-- begin: #footer -->
+    <div id="footer" role="contentinfo">Footer with copyright notice and status information<br />
+Layout based on <a href="http://www.yaml.de/">YAML</a></div>
+    <!-- end: #footer -->
+  </div>
+</div>
+<!-- full skiplink functionality in webkit browsers -->
+<script src="../../yaml/core/js/yaml-focusfix.js" type="text/javascript"></script>
+</div>
+</body>
+</html>

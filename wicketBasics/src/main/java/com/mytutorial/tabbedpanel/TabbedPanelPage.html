@@ -1,0 +1,59 @@
+<html>
+<head>
+<style>
+div.tabpanel div.tab-row li {
+	margin: 0px;
+	padding: 0px;
+	float:left;
+	list-style-type: none;
+}
+div.tabpanel div.tab-row ul{
+	padding-left:6px;
+}
+
+div.tabpanel div.tab-row a:link,div.tabpanel div.tab-row a:visited {
+	float: left;
+	background: #f3f3f3;
+	font-size: 12px;
+	line-height: 14px;
+	font-weight: bold;
+	padding: 8px 15px 8px 15px;
+	margin-right: 4px;
+	border: 1px solid #ccc;
+	text-decoration: none;
+	color: #666;
+}
+
+div.tabpanel div.tab-row li.selected a:link,div.tabpanel div.tab-row a:visited.active
+	{
+	border-bottom: 1px solid #fff;
+	background: #fff;
+	color: #000;
+}
+
+div.tabpanel div.tab-row a:hover {
+	background: #fff;
+}
+#outer{
+	border:solid;
+}
+
+#inner{
+	border:solid;
+	width:50%;
+	margin-left:6px;
+	padding-left:3px;
+	padding-top:6px;
+	padding-bottom:200px;
+	clear:left;
+}
+</style>
+<script type="text/javascript" src="/wicketBasics/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/wicketBasics/js/jquery-ui-1.8.4.custom.min.js"></script>
+</head>
+<body>
+<div id="outer">
+	<div wicket:id="tabs" class="tabpanel"></div>
+</div>
+</body>
+</html>

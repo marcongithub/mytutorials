@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<link href="../css/redmond/jquery-ui-1.8.9.custom.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.ui-widget{
+	margin-bottom:15px;
+}
+
+.ui-widget-header div{
+	float:right; 
+	border:solid;
+}
+ .ui-widget-header{
+	padding:10px;
+} 
+
+#panel_x {
+ top:0px;
+ left:0;
+ width:30%;
+}
+
+
+#innerContent{
+	border:solid;
+	border-color:red;
+	margin-bottom:20px;
+}
+
+#outerContent{	
+	border:solid;
+	border-color:green;
+	padding:5px;
+} 
+
+
+	
+</style>
+<script type="text/javascript" src="../js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui-1.8.9.custom.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$(".min-max-icon").toggle(
+			function maximize(){
+				//maximize the panel
+				uiWidget=$(this).parents(".ui-widget:first");
+				uiWidget.css('position','absolute');
+				uiWidget.animate({width:"100%"},200);
+				//uiWidget.animate({marginBottom:"600px"},200);
+				//replace the max with the min icon
+				$(this).removeClass("ui-icon-plusthick");
+				$(this).addClass("ui-icon-minusthick");
+			},
+			
+			function minimize(){
+				//minimize the panel
+				uiWidget=$(this).parents(".ui-widget:first");
+				uiWidget.css('position','static');
+				uiWidget.animate({width:"30%"},200);
+				//replace the min with the max icon
+				$(this).removeClass("ui-icon-minusthick");
+				$(this).addClass("ui-icon-plusthick");
+			}
+	
+	);	
+	
+	
+	$(".ui-icon").hover(
+				function(){ 
+					$(this).addClass("ui-state-hover"); 
+				},
+				function(){ 
+					$(this).removeClass("ui-state-hover"); 
+				}
+			);
+		}
+	)
+</script>
+</head>
+<body>
+
+
+<div style="border:solid;  margin-bottom:10px">Headline</div>
+
+<div style="position:relative;">
+<div id="panel_y" class="ui-widget" >
+	<div class="ui-widget-header ui-corner-tl ui-corner-tr">
+		Titlebar panel y
+		<div>
+			<a href="#" class="ui-corner-all">
+			<span class="min-max-icon ui-icon ui-icon-plusthick"></span></a>
+		</div>
+	</div>
+	<div  style="padding-bottom:300px" class="ui-widget-content">
+		<div>
+			content von panel y			
+
+		</div>
+	</div>
+</div>
+
+
+
+<div id="panel_x" class="ui-widget" >
+	<div class="ui-widget-header ui-corner-tl ui-corner-tr">
+		Titlebar panel x
+		<div>
+			<a href="#" class="ui-corner-all">
+			<span class="min-max-icon ui-icon ui-icon-plusthick"></span></a>
+		</div>
+	</div>
+	<div id="outerContent" class="ui-widget-content">
+		<div id="innerContent">
+			1 asdfasdfas <br>
+			2 asdfasf <br>
+			3 asdfasdfas <br>
+			4 asdfasf <br>
+			5 asdfasdfas <br>
+			6asdfasf <br>
+			7 asdfasdfas <br>
+			8 asdfasf <br>
+			9 asdfasdfas <br>
+			10 asdfasf <br>
+			11 asdfasdfas <br>
+			12 asdfasf <br>
+			13 asdfasdfas <br>
+			14 asdfasf <br>
+			15 asdfasdfas <br>
+			16 asdfasf <br>
+			17 asdfasdfas <br>
+			18 asdfasf <br>
+			19 asdfasdfas <br>
+			20 asdfasf <br>
+			21 asdfasdfas <br>
+			22 asdfasf <br>
+			23 asdfasdfas <br>
+			24 asdfasf <br>
+		</div>
+	</div>
+
+
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+#main{
+	border: solid;
+	margin:20px 50px;
+	height:600px;
+}
+
+ label{
+ 	display:block;
+	min-width:150px;
+	float:left;
+}
+
+.container{
+	border: solid;
+	margin:20px 50px;
+	width:500px;
+}
+
+h1{
+	margin-left:40px;
+	font-family: sans-serif;
+}

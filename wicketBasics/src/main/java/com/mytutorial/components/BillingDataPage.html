@@ -1,0 +1,17 @@
+<wicket:extend>
+<h1>Billing Data</h1>
+	<form wicket:id="myForm">
+		<div wicket:id="personalDataPanel"></div>
+		<div wicket:id="adressDataPanel"></div>
+		<div class="container">
+			<ul>
+				<li><label>AccountNr</label><input type="text" wicket:id="billingData.bancAccount.accountNr"></li>
+				<li><label>Banc name</label><input type="text" wicket:id="billingData.bancAccount.bancName"></li>
+			</ul>
+		</div>
+		<div class="container">
+				<input type="submit" wicket:id="mySubmitButton" value="submit">
+		</div>
+		
+	</form>
+</wicket:extend>

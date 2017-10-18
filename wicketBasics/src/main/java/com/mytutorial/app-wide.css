@@ -1,0 +1,18 @@
+.caree{
+	float:left;
+	border:solid;
+	margin:10px;
+	background-color: red;
+	width: 80px;
+	height: 80px;
+	cursor:pointer;
+}
+
+.hovered{
+		border-style: outset; color: silver;
+		border-width: 2px;
+}
+
+.greenBack{
+	background-color: green;
+}
