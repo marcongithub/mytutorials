@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.caree {
+	float: left;
+	border: solid;
+	margin: 10px;
+	background-color: red;
+	width: 80px;
+	height: 80px;
+	cursor: pointer;
+}
+
+#list1 {
+	clear: both;
+	cursor: pointer;
+}
+</style>
+<!-- <script src="http://localhost:8080/wicket-tutorial/js/jquery-1.4.2.js"></script> -->
+<!-- <script src="http://localhost:8080/wicket-tutorial/js/jquery-ui-1.8.4.custom.js"></script> -->
+<!-- <script src="http://localhost:8080/js-tutorial/js/proto.js"></script> -->
+<script src="http://localhost:8080/wicket-tutorial/js/jquery-ui-1.11.4/jquery-ui.js"></script>
+
+<script type="text/javascript">
+	var docReadyFuncRef = function docReadyFunc() {
+		var clickFuncRef = function clickFunc() {
+			var elemId = $(this).attr("id");
+			callWicket(elemId);
+		};
+		$(".caree").click(clickFuncRef);
+		$("#list1").sortable();
+
+		$("#list1").bind("sortupdate", function(event, ui) {
+			var liId = $(ui.item).attr("id");
+			var previousLi = $(ui.item).prev();
+			var previousLiId = "0";
+			if (previousLi.length > 0)
+				previousLiId = previousLi.attr("id");
+			onSort(liId, previousLiId);
+		});
+
+		$("#list1").disableSelection();
+
+	};
+	//$(document).ready(docReadyFuncRef);
+</script>
+</head>
+<body>
+<!-- 	<div> -->
+<!-- 		<a wicket:id="submitLink">submit link</a> -->
+<!-- 	</div> -->
+
+
+	<div wicket:id="caree1" class="caree"></div>
+	<div wicket:id="caree2" class="caree"></div>
+	<div wicket:id="backlogListContainer">
+		<ul id="list1">
+			<li wicket:id="backlogList"><label wicket:id="task"></label></li>
+		</ul>
+	</div>
+	<div id="outPut"></div>
+</body>
+</html>
