@@ -64,7 +64,7 @@ public class WicketApplication extends WebApplication {
 		getSharedResources().add("app-wide-js-key", appWideJs);
 		
 		IResource jqueryUI = new JavaScriptResourceReference(getClass(), "jquery-ui.js").getResource();
-		getSharedResources().add("jquery-ui", jqueryUI);
+		getSharedResources().add("jqueryUI", jqueryUI);
 		
 		
 //		getJavaScriptLibrarySettings().setJQueryReference(new AnotherVersionOfJQueryReference());
