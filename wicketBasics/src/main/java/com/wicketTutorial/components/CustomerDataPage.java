@@ -22,7 +22,7 @@ public class CustomerDataPage extends ComponentTestPage {
 			@Override
 			protected void onSubmit() {
 				OrderModel orderModel = (OrderModel) this.getModel();
-				this.setResponsePage(new CarRentalPage(orderModel));
+//				this.setResponsePage(new CarRentalPage(orderModel));
 
 			}
 		};
@@ -51,7 +51,8 @@ public class CustomerDataPage extends ComponentTestPage {
 		AjaxButton checkButton = new AjaxButton("checkButton", form) {
 			@Override
 			protected void onSubmit(AjaxRequestTarget target, Form<?> form) {
-				target.add(form);
+//				target.add(form);
+//				this.setResponsePage(new CarRentalPage(orderModel));
 			}
 		};
 
@@ -59,8 +60,7 @@ public class CustomerDataPage extends ComponentTestPage {
 		Button submitButton = new Button("mySubmitButton") {
 			@Override
 			public void onSubmit() {
-				// TODO Auto-generated method stub
-				super.onSubmit();
+//				this.setResponsePage(new CarRentalPage(orderModel));
 			}
 		};
 		form.add(submitButton);

@@ -7,6 +7,7 @@ import org.apache.wicket.request.resource.JavaScriptResourceReference;
 import com.wicketTutorial.ajax.DecorateCallPage;
 import com.wicketTutorial.ajax.LazyLoadPage;
 import com.wicketTutorial.callbacks.Callbacks;
+import com.wicketTutorial.components.BillingDataPage;
 import com.wicketTutorial.components.CarRentalPage;
 import com.wicketTutorial.components.CustomerDataPage;
 import com.wicketTutorial.js.MarkupWithJsPage;
@@ -52,9 +53,14 @@ public class WicketApplication extends WebApplication {
 		this.mountPage("/jstowicket", JsToWicket.class);
 		this.mountPage("/callback", Callbacks.class);
 		this.mountPage("/tabs", TabbedPanelPage.class);
+		
+		//car rental test
 		this.mountPage("/comps", CustomerDataPage.class);
-		this.mountPage("/restest", RessourcenTest.class);
+		this.mountPage("/billing", BillingDataPage.class);
 		this.mountPage("/cars", CarRentalPage.class);
+		
+		
+		this.mountPage("/restest", RessourcenTest.class);
 		this.mountPage("/decorajax", DecorateCallPage.class);
 		this.mountPage("/lazyload", LazyLoadPage.class);
 		
