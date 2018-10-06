@@ -1,7 +1,5 @@
 package com.wicketTutorial.components;
 
-import org.apache.wicket.MarkupContainer;
-import org.apache.wicket.markup.MarkupStream;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.markup.html.panel.Panel;
@@ -15,20 +13,26 @@ public class PersonalDataPanel extends Panel {
 	public PersonalDataPanel(String id, IModel<PersonalData> model) {
 		super(id, model);
 		setOutputMarkupId(true);
-		Form<PersonalData> form = new Form<PersonalData>("form",
-				new CompoundPropertyModel<PersonalData>(model) {
+		Form<PersonalData> form = new Form<PersonalData>("form", new CompoundPropertyModel<PersonalData>(model) {
 
-					@Override
-					public PersonalData getObject() {
-						return super.getObject();
-					}
-					@Override
-					public void setObject(PersonalData object) {
-						super.setObject(object);
-					}
+			@Override
+			public PersonalData getObject() {
+				return super.getObject();
+			}
 
-				});
-		form.add(new TextField<String>("name"){
+			@Override
+			public void setObject(PersonalData object) {
+				super.setObject(object);
+			}
+
+			@Override
+			public void detach() {
+				// TODO Auto-generated method stub
+				super.detach();
+			}
+
+		});
+		form.add(new TextField<String>("name") {
 			@Override
 			public void setModelValue(String[] value) {
 				// TODO Auto-generated method stub
@@ -38,8 +42,6 @@ public class PersonalDataPanel extends Panel {
 		form.add(new TextField<String>("surname"));
 		add(form);
 	}
-
-	
 
 	@Override
 	protected void onConfigure() {
@@ -59,6 +61,12 @@ public class PersonalDataPanel extends Panel {
 	@Override
 	protected void onModelChanging() {
 		super.onModelChanging();
+	}
+
+	@Override
+	protected void onDetach() {
+		// TODO Auto-generated method stub
+		super.onDetach();
 	}
 
 }

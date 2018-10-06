@@ -11,8 +11,7 @@ public abstract class MySiteBase extends WebPage {
 		super.onInitialize();
 		Border border = new MySiteBorder("myBorder");
 		add(border);
-		// border.getBodyContainer().add(new Label("currentPage", getPageTitle()));
-		border.add(new Label("currentPage", getPageTitle()));
+		border.getBodyContainer().add(new Label("currentPage", getPageTitle()));
 	}
 
 	abstract String getPageTitle();

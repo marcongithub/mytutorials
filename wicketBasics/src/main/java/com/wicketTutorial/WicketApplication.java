@@ -7,6 +7,7 @@ import org.apache.wicket.request.resource.JavaScriptResourceReference;
 import com.wicketTutorial.ajax.DecorateCallPage;
 import com.wicketTutorial.ajax.LazyLoadPage;
 import com.wicketTutorial.border.MySiteProfile;
+import com.wicketTutorial.border.YourSiteWithMySiteBorder;
 import com.wicketTutorial.callbacks.Callbacks;
 import com.wicketTutorial.components.BillingDataPage;
 import com.wicketTutorial.components.CarRentalPage;
@@ -62,6 +63,7 @@ public class WicketApplication extends WebApplication {
 		this.mountPage("/lazyload", LazyLoadPage.class);
 
 		this.mountPage("/border", MySiteProfile.class);
+		this.mountPage("/border2", YourSiteWithMySiteBorder.class);
 
 		IResource appWideJs = new JavaScriptResourceReference(getClass(), "app-wide.js").getResource();
 		getSharedResources().add("app-wide-js-key", appWideJs);

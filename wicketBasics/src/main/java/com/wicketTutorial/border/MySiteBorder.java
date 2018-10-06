@@ -1,5 +1,6 @@
 package com.wicketTutorial.border;
 
+import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.border.Border;
 
@@ -13,6 +14,7 @@ public class MySiteBorder extends Border {
 		super(id);
 		addToBorder(new Label("username", "Horsti"));
 		addToBorder(new Label("lastLogin", "Grad eben"));
+		addToBorder(new WebMarkupContainer("contentContainer"));
 	}
 
 }
