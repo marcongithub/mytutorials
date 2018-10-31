@@ -8,14 +8,14 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "com.plainMvcTutorial")
+@ComponentScan(basePackages = {"com.plainMvcTutorial", "com.healthcheck", "com.offer"})
 public class ApplicationConfiguration extends WebMvcConfigurerAdapter {
 
-	@Override
-	public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
-		// geht auch ohne
-		// configurer.favorPathExtension(false).favorParameter(false).ignoreAcceptHeader(false).useJaf(false);
-		super.configureContentNegotiation(configurer);
-	}
+    @Override
+    public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
+        // geht auch ohne
+        // configurer.favorPathExtension(false).favorParameter(false).ignoreAcceptHeader(false).useJaf(false);
+        super.configureContentNegotiation(configurer);
+    }
 
 }

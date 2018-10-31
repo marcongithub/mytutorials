@@ -2,6 +2,8 @@ package com.mytutorial.streams;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
+import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.function.IntUnaryOperator;
 import java.util.stream.Collectors;
@@ -47,9 +49,20 @@ public class MyStreamsApp {
 	
 	doubleList.stream().map(nettoRechner::nettoEk);
 	doubleList.stream().map((new NettoRechner())::nettoEk);
-	
+
+		BinaryOperator<Double> accumulator = new BinaryOperator<Double>() {
+			@Override
+			public Double apply(Double aDouble, Double aDouble2) {
+				return aDouble + aDouble2;
+			}
+		};
+
+		Optional<Double> sum = doubleList.stream().reduce(accumulator);
+
 	
 	}
+
+
 
 	private static void test() {
 		int factor = 1000; // 1

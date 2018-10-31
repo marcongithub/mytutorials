@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "sourceMap": false,
+        "outDir": "src/main/webapp/js"
+    },
+    "files": [
+        "src/main/resources/ts/test.ts"
+    ]
+}

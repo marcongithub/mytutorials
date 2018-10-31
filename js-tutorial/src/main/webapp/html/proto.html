@@ -4,23 +4,19 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script>
-  function ready() {
-	  console.log('hello js onReady');
-  }
-  
-  function load(){
-	  console.log('hello js onLoad');
-  }
-  
-  function readyStateChanged(){
-	  console.log('hello js readyStateChanged');
-  }
+    function pippo() {
+        var foo = 'hello paperino!';
+        console.log(foo);
+        baz();
+        function baz(){
+            console.log('hello baz');
+        }
 
-  window.onload= function windowOnload(){
-	  console.log('hello js windowOnload');
-  }
+    }
+
+    baz();
   
-  document.addEventListener("DOMContentLoaded", ready);
+
 </script>
 <script type="text/javascript" src="../js/proto.js"></script>
 </head>
@@ -28,6 +24,11 @@
 <p>Javascript tutorial</p>
 <script>
 console.log('hello js in body');
+</script>
+
+<script>
+
+
 </script>
 </body>
 </html>

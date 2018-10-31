@@ -1,10 +1,6 @@
 package com.plainMvcTutorial;
 
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/payment")
@@ -20,7 +16,7 @@ public class PaymentController {
 
 	private static final int AUTH_FAILURE = 102;
 
-	@RequestMapping(value = "/healthcheck", method = RequestMethod.GET, produces = { "application/xml" })
+	@RequestMapping(value = "/healthcheck", method = RequestMethod.GET, produces = {"application/xml" })
 	public BaseResponse healthCheck() {
 		// return "healthy";
 		return new BaseResponse("100", 1);

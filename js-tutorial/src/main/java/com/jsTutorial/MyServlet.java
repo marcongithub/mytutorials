@@ -16,6 +16,8 @@ public class MyServlet extends HttpServlet {
      * Default constructor. 
      */
     public MyServlet() {
+
+    	int a =0;
     }
 
 	/**
