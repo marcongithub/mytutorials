@@ -1,13 +1,21 @@
 import {Component, OnInit} from '@angular/core';
 import {Person} from './shared/person';
+import {Book} from './shared/book';
 
 @Component({
   selector: 'bm-root',
-  templateUrl: './app.component.html',
-  styles: []
+  // templateUrl: './app.component.html',
+  template: `
+    <bm-book-list *ngIf="listOn" (showDetailsEvent)="showDetails($event)"></bm-book-list>
+    <bm-book-details *ngIf="detailsOn" (showListEvent)="showList()" [book]="book"></bm-book-details>
+  `
 })
 export class AppComponent implements OnInit {
   private title = 'BookMonkey';
+
+  listOn: boolean = true;
+
+  detailsOn = false;
 
   private person: Person;
 
@@ -15,13 +23,26 @@ export class AppComponent implements OnInit {
 
   private adultFriends: Person[];
 
+  book: Book;
+
 
   ngOnInit(): void {
     // simulate some logic
-    const personName = 'Marco';
-    const personSurname = 'Bernasconi';
+    const personName = 'Horst';
+    const personSurname = 'Katzmeier';
     this.person = new Person(personName, personSurname);
     this.fbFriendList = this.loadFbFriendList(this.person);
+  }
+
+  showList() {
+    this.listOn = true;
+    this.detailsOn = false;
+  }
+
+  showDetails(book: Book) {
+    this.book = book;
+    this.listOn = false;
+    this.detailsOn = true;
   }
 
   private loadFbFriendList(person: Person): Person[] {
