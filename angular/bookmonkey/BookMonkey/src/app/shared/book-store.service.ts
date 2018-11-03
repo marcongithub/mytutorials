@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
-import { Book, Thumbnail } from './book';
+import {Book, Thumbnail} from './book';
 
 @Injectable()
 export class BookStoreService {
@@ -32,6 +32,13 @@ export class BookStoreService {
   }
 
   getAll() {
+    console.table(this.books);
     return this.books;
   }
+
+  getSingle(isbn) {
+    return this.books.find(book => book.isbn === isbn);
+  }
+
+
 }

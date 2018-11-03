@@ -7,13 +7,15 @@ import { BookListComponent } from './book-list/book-list.component';
 import { BookListItemComponent } from './book-list-item/book-list-item.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import {BookStoreService} from './shared/book-store.service';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookListComponent,
     BookListItemComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

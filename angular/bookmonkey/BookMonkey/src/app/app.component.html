@@ -1,17 +1,5 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome {{person.getFullName()}} to {{ title }}!
-  </h1>
-  <h2>My friends on fuckbook:</h2>
-  <ul class="ui middle aligned selection divided list">
-    <li *ngFor="let friend of fbFriendList" class="item">{{friend.getFullName()}}, age: {{friend.age}}</li>
-  </ul>
-  <h3>The adults among them</h3>
-  <ul class="ui middle aligned selection divided list">
-    <li *ngFor="let friend of adultFriends" class="item">{{friend.getFullName()}}</li>
-  </ul>
-
+<div class="ui two item tabs menu">
+  <a routerLink="home"  routerLinkActive="active" class="item">Home</a>
+  <a routerLink="books" routerLinkActive="active" class="item">Bücher</a>
 </div>
-
 <router-outlet></router-outlet>
