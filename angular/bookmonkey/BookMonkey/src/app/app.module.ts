@@ -10,6 +10,8 @@ import {BookStoreService} from './shared/book-store.service';
 import { HomeComponent } from './home/home.component';
 import {CommonModule} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
+import { RentalOrderComponent } from './form-tutorial/rental-order/rental-order.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,13 +19,15 @@ import {HttpClientModule} from '@angular/common/http';
     BookListComponent,
     BookListItemComponent,
     BookDetailsComponent,
-    HomeComponent
+    HomeComponent,
+    RentalOrderComponent
   ],
   imports: [
     HttpClientModule,
     CommonModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [BookStoreService],
   bootstrap: [AppComponent]

@@ -10,7 +10,7 @@
       "prefix": "bm",
       "schematics": {
         "@schematics/angular:component": {
-          "inlineStyle": true
+          "inlineStyle": false
         }
       },
       "architect": {

@@ -1,16 +1,16 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "target": "es6",
+    "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
-    "strict": true,
-    
+    "strict": false,
+
     "lib": [
-      "es2015","DOM"
+      "ES2017","DOM"
     ]
   },
   "files": [
-    "greeter.ts"
+     "commons.ts"
   ]
 }

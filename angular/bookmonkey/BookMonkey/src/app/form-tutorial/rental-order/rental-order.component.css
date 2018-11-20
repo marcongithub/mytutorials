@@ -1,0 +1,21 @@
+div.formContent{
+  margin: 3em;
+  padding: 1em;
+  position: absolute;
+  width: 25%;
+}
+
+div.formRow{
+  margin: 1em;
+}
+
+div.formRow label {
+  margin-right: 1em;
+  margin-left: 1em;
+  width: 10em;
+  display: inline-block;
+}
+
+div.formRow button {
+  float: right;
+}

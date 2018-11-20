@@ -1,0 +1,55 @@
+
+<div class="formContent">
+  <form [formGroup]="rentalForm" (ngSubmit)="onSubmit()" novalidate>
+
+    <div formGroupName="personalData" novalidate>
+      <div class="formRow">
+        <label>First Name</label>
+        <input type="text" formControlName="name">
+      </div>
+      <div class="formRow">
+        <label>Last Name</label>
+        <input type="text" formControlName="surname">
+      </div>
+      <div class="formRow">
+        <label>Country</label>
+        <select formControlName="country">
+          <option *ngFor="let country of countries" [value]="country">{{country}}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="formRow">
+      <input type="checkbox" formControlName="adacMember">
+      <label>Adac member</label>
+    </div>
+
+    <div class="formRow">
+      <p>Co driver</p>
+      <div class="formRow">
+        <div *ngFor="let option of coDriverOptions">
+          <input type="radio" [id]="option" formControlName="coDriverOption" [value]="option"
+                 checked>
+          <label [for]="option">{{option}}</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="formRow">
+      <p>Extras</p>
+      <div *ngFor="let control of rentalForm.controls['extras'].controls; let i=index " class="formRow">
+        <input type="checkbox"  [value]="availableExtras[i]" [formControl]="control"/>
+        <label>{{availableExtras[i]}}</label>
+      </div>
+    </div>
+
+
+
+    <div class="formRow">
+      <button class="ui button" type="submit">Submit</button>
+    </div>
+
+
+
+  </form>
+</div>
