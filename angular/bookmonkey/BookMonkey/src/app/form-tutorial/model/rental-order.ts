@@ -43,8 +43,16 @@ export class RentalOrder {
 
 export class PersonalData{
 
-  constructor(private _name: string, private _surname?: string, private _country?: string) {
+  constructor(private _name: string, private _surname?: string, private _country?: string, private _birthDate?: Date) {
     this._name = _name ? _name : '';
+  }
+
+  get birthDate(): Date {
+    return this._birthDate;
+  }
+
+  set birthDate(value: Date) {
+    this._birthDate = value;
   }
 
   get name(): string {

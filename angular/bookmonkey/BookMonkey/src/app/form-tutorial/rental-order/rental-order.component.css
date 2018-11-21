@@ -19,3 +19,11 @@ div.formRow label {
 div.formRow button {
   float: right;
 }
+
+div.dateFormats{
+  float:right;
+  margin-right: 70em;
+}
+ul {
+  list-style-type: none;
+}

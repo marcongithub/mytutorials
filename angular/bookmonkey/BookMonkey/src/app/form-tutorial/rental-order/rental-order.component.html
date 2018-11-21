@@ -1,4 +1,3 @@
-
 <div class="formContent">
   <form [formGroup]="rentalForm" (ngSubmit)="onSubmit()" novalidate>
 
@@ -17,6 +16,10 @@
           <option *ngFor="let country of countries" [value]="country">{{country}}</option>
         </select>
       </div>
+      <div class="formRow">
+        <label>Birthdate</label>
+        <input id="bday" type="date" formControlName="birthDate">
+      </div>
     </div>
 
     <div class="formRow">
@@ -28,8 +31,7 @@
       <p>Co driver</p>
       <div class="formRow">
         <div *ngFor="let option of coDriverOptions">
-          <input type="radio" [id]="option" formControlName="coDriverOption" [value]="option"
-                 checked>
+          <input type="radio" [id]="option" formControlName="coDriverOption" [value]="option">
           <label [for]="option">{{option}}</label>
         </div>
       </div>
@@ -38,18 +40,23 @@
     <div class="formRow">
       <p>Extras</p>
       <div *ngFor="let control of rentalForm.controls['extras'].controls; let i=index " class="formRow">
-        <input type="checkbox"  [value]="availableExtras[i]" [formControl]="control"/>
-        <label>{{availableExtras[i]}}</label>
+        <input type="checkbox" [id]="availableExtras[i]" [value]="availableExtras[i]" [formControl]="control"/>
+        <label [for]="availableExtras[i]">{{availableExtras[i]}}</label>
       </div>
     </div>
-
-
 
     <div class="formRow">
       <button class="ui button" type="submit">Submit</button>
     </div>
 
-
-
   </form>
+</div>
+
+<div class="dateFormats">
+  <ul>
+    <li>Some date pipes:</li>
+    <li><label>'short' : </label><label>{{usersBirthday | date:'short'}}</label></li>
+    <li><label>'dd.MM.yyyy' : </label><label>{{usersBirthday | date:'dd.MM.yyyy'}}</label></li>
+  </ul>
+
 </div>

@@ -12,6 +12,7 @@ import {CommonModule} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 import { RentalOrderComponent } from './form-tutorial/rental-order/rental-order.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import {DateValueAccessorModule} from 'angular-date-value-accessor';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     CommonModule,
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DateValueAccessorModule
   ],
   providers: [BookStoreService],
   bootstrap: [AppComponent]

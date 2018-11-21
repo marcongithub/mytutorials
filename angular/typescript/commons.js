@@ -5,12 +5,17 @@ var anyObject = (_a = {
         0: 'baz'
     },
     _a[1] = 'horsti',
+    _a.fonzi = {
+        alias: 'LeFonce',
+        fonzischildren: ['tick', 'trick', 'track']
+    },
     _a);
 console.log(anyObject.pippo);
 console.log(anyObject['pippo']);
 console.log(anyObject[0]);
 console.log(anyObject['0']);
 console.log(anyObject['1']);
+anyObject['fonzi'].fonzischildren.forEach(function (c) { return console.log(c); });
 console.log('########');
 Object.keys(anyObject).forEach(function (t) { return console.log(t + ' is typeof ' + typeof t); });
 //Object.keys(anyObject).map(t => Number(t)).filter(t => !isNaN(t)).forEach(t => console.log(t));

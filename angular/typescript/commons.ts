@@ -2,7 +2,11 @@ let anyObject = {
   pippo : 'paperino',
   foo : 'bar',
   0 : 'baz',
-  [1] : 'horsti'
+  [1] : 'horsti',
+  fonzi : {
+    alias: 'LeFonce',
+    fonzischildren:['tick','trick','track']
+  }
 };
 
 console.log(anyObject.pippo);
@@ -10,6 +14,7 @@ console.log(anyObject['pippo']);
 console.log(anyObject[0]);
 console.log(anyObject['0']);
 console.log(anyObject['1']);
+anyObject['fonzi'].fonzischildren.forEach(c => console.log(c));
 
 console.log('########');
 
