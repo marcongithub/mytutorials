@@ -9,7 +9,13 @@ var anyObject = (_a = {
         alias: 'LeFonce',
         fonzischildren: ['tick', 'trick', 'track']
     },
+    _a.errors = null,
     _a);
+anyObject.errors = { foo: 'bar' };
+anyObject['newprop'] = 'newpropval';
+console.log(anyObject['newprop']);
+console.log(anyObject.newprop);
+console.log(anyObject.errors);
 console.log(anyObject.pippo);
 console.log(anyObject['pippo']);
 console.log(anyObject[0]);

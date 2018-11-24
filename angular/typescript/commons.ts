@@ -6,8 +6,17 @@ let anyObject = {
   fonzi : {
     alias: 'LeFonce',
     fonzischildren:['tick','trick','track']
-  }
+  },
+  errors: null
 };
+
+anyObject.errors = {foo:'bar'};
+anyObject['newprop'] = 'newpropval';
+console.log(anyObject['newprop']);
+console.log(anyObject.newprop);
+
+
+console.log(anyObject.errors);
 
 console.log(anyObject.pippo);
 console.log(anyObject['pippo']);
