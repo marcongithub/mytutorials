@@ -11,6 +11,7 @@
     ]
   },
   "files": [
-     "commons.ts"
+     "commons.ts",
+	 "hellowin.ts"
   ]
 }
